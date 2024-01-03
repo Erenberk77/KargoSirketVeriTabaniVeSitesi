@@ -12,7 +12,7 @@ if (isset($_POST['kargoGonder'])) {
   $GonderiDurum = "Gönderi Oluşturuldu";
   $Tarih = date("d-m-Y h:i");
 
-  // Kargo ücretini hesaplamak için kullanıcı tanımlı fonksiyonu çağır
+  
   $queryGetCost = "SELECT fn_CalculateShippingCost('$GonderiAgirlik', '$GonderiEbatlar') AS GonderiUcret";
   $resultGetCost = mysqli_query($conn, $queryGetCost);
 
@@ -23,7 +23,7 @@ if (isset($_POST['kargoGonder'])) {
   $row = mysqli_fetch_assoc($resultGetCost);
   $GonderiUcret = $row['GonderiUcret'];
 
-  // Gönderi bilgilerini veritabanına ekle
+  
   $queryInsert = "INSERT INTO tblGonderiler(GonderenID, AliciID, GonderiKonu, GonderiIcerik, GonderiAgirlik, GonderiEbatlar, GonderiAciklama, GonderiDurum, Tarih, GonderiUcret) 
                   VALUES ('$GonderenID', '$AliciID', '$GonderiKonu', '$GonderiIcerik', '$GonderiAgirlik', '$GonderiEbatlar', '$GonderiAciklama', '$GonderiDurum', '$Tarih', '$GonderiUcret')";
   $resultInsert = mysqli_query($conn, $queryInsert);

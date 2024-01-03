@@ -1,9 +1,9 @@
 
 <style>
 .card {
-        margin: 0 auto; /* Added */
-        float: none; /* Added */
-        margin-bottom: 10px; /* Added */
+        margin: 0 auto; 
+        float: none; 
+        margin-bottom: 10px; 
         width:40%;
 }
 </style>
@@ -51,7 +51,7 @@ if (isset($_POST['duzenle'])) {
 <main class="container p-4 md-3">
   <div class="text-center">
     <div>
-      <!-- MESSAGES -->
+      
 
       <?php if (isset($_SESSION['message'])) { ?>
       <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" role="alert">
@@ -62,7 +62,7 @@ if (isset($_POST['duzenle'])) {
       </div>
       <?php  $_SESSION['message']=null; } ?>
 
-      <!-- ADD TASK FORM -->
+      
       <div class="card" style="width:50rem;">
         <div class="card-header">GONDERİ DÜZENLE</div>
         <div class="card-body">
